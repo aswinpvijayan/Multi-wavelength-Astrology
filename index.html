@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-wavelength Astrology | Fortune & Physics</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="visual-mode">
+    <div id="stars-container"></div>
+    <main>
+        <header>
+            <div class="logo">
+                <span class="symbol">🔭</span>
+                <h1>Multi-wavelength Astrology</h1>
+            </div>
+            <div class="wavelength-toggle">
+                <button id="visual-btn" class="active">Visual</button>
+                <button id="fir-btn">Thermal</button>
+                <button id="radio-btn">Radio</button>
+                <div class="toggle-track">
+                    <div class="toggle-thumb"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="selector-container">
+            <label for="zodiac-dropdown">OBSERVE COSMIC ALIGNMENT:</label>
+            <select id="zodiac-dropdown" class="glass-select">
+                <option value="Aries">Aries</option>
+                <option value="Taurus">Taurus</option>
+                <option value="Gemini">Gemini</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Leo">Leo</option>
+                <option value="Virgo">Virgo</option>
+                <option value="Libra">Libra</option>
+                <option value="Scorpio">Scorpio</option>
+                <option value="Sagittarius">Sagittarius</option>
+                <option value="Capricorn">Capricorn</option>
+                <option value="Aquarius">Aquarius</option>
+                <option value="Pisces">Pisces</option>
+            </select>
+        </div>
+
+        <section id="forecast-container">
+            <div class="card" id="main-card">
+                <div id="forecast-date" class="forecast-date"></div>
+                <div class="card glass-card">
+                <div class="interference"></div>
+                <div class="forecast-content">
+                    <p id="forecast-text">Initializing cosmic data streams...</p>
+                </div>
+                </div>
+                <div class="meta-info">
+                    <span id="coord-info">RA: 10h 45m | DEC: -59°</span>
+                    <span id="signal-info">SNR: 45</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Institute of Speculative Astrophysics & Astrology</p>
+        </footer>
+    </main>
+
+    <div id="help-btn" class="help-btn" title="Help Me">?</div>
+    
+    <div id="help-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Zodiac Dates</h2>
+            <ul class="zodiac-dates">
+                <li><strong>Aries:</strong> Mar 21 - Apr 19</li>
+                <li><strong>Taurus:</strong> Apr 20 - May 20</li>
+                <li><strong>Gemini:</strong> May 21 - Jun 20</li>
+                <li><strong>Cancer:</strong> Jun 21 - Jul 22</li>
+                <li><strong>Leo:</strong> Jul 23 - Aug 22</li>
+                <li><strong>Virgo:</strong> Aug 23 - Sep 22</li>
+                <li><strong>Libra:</strong> Sep 23 - Oct 22</li>
+                <li><strong>Scorpio:</strong> Oct 23 - Nov 21</li>
+                <li><strong>Sagittarius:</strong> Nov 22 - Dec 21</li>
+                <li><strong>Capricorn:</strong> Dec 22 - Jan 19</li>
+                <li><strong>Aquarius:</strong> Jan 20 - Feb 18</li>
+                <li><strong>Pisces:</strong> Feb 19 - Mar 20</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "deep-space-astrology",
+  "version": "1.0.0",
+  "description": "Multiwavelength Astrology App Prototype",
+  "type": "module",
+  "scripts": {
+    "start": "npx -y serve ./"
+  }
+}
