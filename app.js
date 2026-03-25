@@ -37,6 +37,12 @@ function setupZodiacEvents() {
     zodiacDropdown.addEventListener('change', (e) => {
         currentSign = e.target.value;
         updateForecast();
+        // Track zodiac sign selection
+        if (typeof gtag === 'function') {
+            gtag('event', 'select_zodiac', {
+                'sign': currentSign
+            });
+        }
     });
 
     // Modal Logic
@@ -137,6 +143,14 @@ function setMode(mode) {
         body.classList.add('radio-mode');
         radioBtn.classList.add('active');
     }
+
+    // Track wavelength mode change
+    if (typeof gtag === 'function') {
+        gtag('event', 'select_wavelength', {
+            'mode': mode
+        });
+    }
+
     updateForecast();
 }
 

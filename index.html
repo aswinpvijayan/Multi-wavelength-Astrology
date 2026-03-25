@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,20 @@
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQXHQ5XY59"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WQXHQ5XY59');
+    </script>
 </head>
+
 <body class="visual-mode">
     <div id="stars-container"></div>
     <main>
@@ -49,10 +62,10 @@
             <div class="card" id="main-card">
                 <div id="forecast-date" class="forecast-date"></div>
                 <div class="card glass-card">
-                <div class="interference"></div>
-                <div class="forecast-content">
-                    <p id="forecast-text">Initializing cosmic data streams...</p>
-                </div>
+                    <div class="interference"></div>
+                    <div class="forecast-content">
+                        <p id="forecast-text">Initializing cosmic data streams...</p>
+                    </div>
                 </div>
                 <div class="meta-info">
                     <span id="coord-info">RA: 10h 45m | DEC: -59°</span>
@@ -67,7 +80,7 @@
     </main>
 
     <div id="help-btn" class="help-btn" title="Help Me">?</div>
-    
+
     <div id="help-modal" class="modal-overlay hidden">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -91,4 +104,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>
