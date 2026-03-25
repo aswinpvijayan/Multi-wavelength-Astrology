@@ -1,0 +1,1 @@
+For all your forecast, maybe your luck (or misfortune) is hidden across the spectrum.
