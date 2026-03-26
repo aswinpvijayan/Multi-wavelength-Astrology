@@ -90,10 +90,10 @@ function updateForecast() {
         'radio': 'λ: 1 mm - 100 m'
     };
 
-    const markerPositions = {
-        'visual': { left: '10%', top: '90px' },
-        'far_infrared': { left: '50%', top: '15px' },
-        'radio': { left: '90%', top: '90px' }
+    const markerDistances = {
+        'visual': '15%',
+        'far_infrared': '55%',
+        'radio': '95%'
     };
 
     // Set the date heading (e.g., "Visual Forecast: 26 March")
@@ -103,8 +103,7 @@ function updateForecast() {
 
     // Update UI Elements
     wavelengthRange.textContent = ranges[wavelength];
-    spectrumMarker.style.left = markerPositions[wavelength].left;
-    spectrumMarker.style.top = markerPositions[wavelength].top;
+    spectrumMarker.style.offsetDistance = markerDistances[wavelength];
 
     const signData = allForecasts[currentSign];
     if (!signData) return;
