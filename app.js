@@ -11,6 +11,8 @@ const coordInfo = document.getElementById('coord-info');
 const signalInfo = document.getElementById('signal-info');
 const starsContainer = document.getElementById('stars-container');
 const zodiacDropdown = document.getElementById('zodiac-dropdown');
+const spectrumMarker = document.getElementById('spectrum-marker');
+const wavelengthRange = document.getElementById('wavelength-range');
 
 // Forecast Elements
 const forecastDateEl = document.getElementById('forecast-date');
@@ -84,14 +86,30 @@ function updateForecast() {
     
     const modeNames = {
         'visual': 'Visual',
-        'far_infrared': 'Thermal',
-        'radio': 'Warm'
+        'far_infrared': 'Far-Infrared',
+        'radio': 'Radio'
     };
 
-    // Set the date heading (e.g., "Visual Forecast: 25 March")
+    const ranges = {
+        'visual': 'λ: 400 - 700 nm',
+        'far_infrared': 'λ: 25 - 350 μm',
+        'radio': 'λ: 1 mm - 100 m'
+    };
+
+    const markerPositions = {
+        'visual': '40%',
+        'far_infrared': '75%',
+        'radio': '95%'
+    };
+
+    // Set the date heading (e.g., "Visual Forecast: 26 March")
     const today = new Date();
     const dateOptions = { day: 'numeric', month: 'long' };
     forecastDateEl.textContent = `${modeNames[wavelength]} Forecast: ${today.toLocaleDateString('en-GB', dateOptions)}`;
+
+    // Update UI Elements
+    wavelengthRange.textContent = ranges[wavelength];
+    spectrumMarker.style.left = markerPositions[wavelength];
 
     // Create a robust hash based on the exact date, the wavelength, AND the selected sign
     // This ensures variety across the different wavelengths and signs on the same day.

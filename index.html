@@ -32,13 +32,25 @@
             </div>
             <div class="wavelength-toggle">
                 <button id="visual-btn" class="active">Visual</button>
-                <button id="fir-btn">Thermal</button>
-                <button id="radio-btn">Warm</button>
+                <button id="fir-btn">Far-Infrared</button>
+                <button id="radio-btn">Radio</button>
                 <div class="toggle-track">
                     <div class="toggle-thumb"></div>
                 </div>
             </div>
         </header>
+
+        <section id="spectrum-container" class="spectrum-container">
+            <div class="spectrum-labels">
+                <span>UV</span>
+                <span>Visual</span>
+                <span>Infrared</span>
+                <span>Radio</span>
+            </div>
+            <div class="spectrum-bar">
+                <div id="spectrum-marker" class="spectrum-marker"></div>
+            </div>
+        </section>
 
         <div class="selector-container">
             <label for="zodiac-dropdown">OBSERVE COSMIC ALIGNMENT:</label>
@@ -63,6 +75,7 @@
                 <div id="forecast-date" class="forecast-date"></div>
                 <div class="card glass-card">
                     <div class="interference"></div>
+                    <div class="wavelength-range" id="wavelength-range">λ: 400 - 700 nm</div>
                     <div class="forecast-content">
                         <p id="forecast-text">Initializing cosmic data streams...</p>
                     </div>
