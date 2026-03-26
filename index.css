@@ -461,7 +461,10 @@ h1 {
 .spectrum-marker-svg {
     fill: var(--visual-glow);
     filter: drop-shadow(0 0 8px var(--visual-glow));
-    transition: cx 0.8s ease-in-out, cy 0.8s ease-in-out, fill 0.6s ease;
+    /* Link to the same path as the curve for perfect flow */
+    offset-path: path("M0,110 C150,110 250,10 400,10 C550,10 700,80 1000,100");
+    offset-distance: 10%; /* Managed by JS */
+    transition: offset-distance 1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.6s ease;
     cursor: pointer;
 }
 

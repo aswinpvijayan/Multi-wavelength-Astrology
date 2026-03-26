@@ -105,12 +105,8 @@ function updateForecast() {
     // Update UI Elements
     wavelengthRange.textContent = ranges[wavelength];
     
-    if (sedCurve && spectrumMarker) {
-        const totalLength = sedCurve.getTotalLength();
-        const point = sedCurve.getPointAtLength(totalLength * markerPercents[wavelength]);
-        // Set SVG attributes directly
-        spectrumMarker.setAttribute('cx', point.x);
-        spectrumMarker.setAttribute('cy', point.y);
+    if (spectrumMarker) {
+        spectrumMarker.style.offsetDistance = `${markerPercents[wavelength] * 100}%`;
     }
 
     const signData = allForecasts[currentSign];
