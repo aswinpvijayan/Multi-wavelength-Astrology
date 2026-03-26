@@ -78,12 +78,6 @@ function createStars() {
 
 function updateForecast() {
     const wavelength = currentMode;
-    const signData = allForecasts[currentSign];
-    
-    if (!signData) return;
-
-    const list = signData[wavelength];
-    
     const modeNames = {
         'visual': 'Visual',
         'far_infrared': 'Far-Infrared',
@@ -97,9 +91,9 @@ function updateForecast() {
     };
 
     const markerPositions = {
-        'visual': '40%',
-        'far_infrared': '75%',
-        'radio': '95%'
+        'visual': '33%',
+        'far_infrared': '67%',
+        'radio': '98%'
     };
 
     // Set the date heading (e.g., "Visual Forecast: 26 March")
@@ -110,6 +104,11 @@ function updateForecast() {
     // Update UI Elements
     wavelengthRange.textContent = ranges[wavelength];
     spectrumMarker.style.left = markerPositions[wavelength];
+
+    const signData = allForecasts[currentSign];
+    if (!signData) return;
+
+    const list = signData[wavelength];
 
     // Create a robust hash based on the exact date, the wavelength, AND the selected sign
     // This ensures variety across the different wavelengths and signs on the same day.
