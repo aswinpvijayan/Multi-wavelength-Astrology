@@ -91,9 +91,9 @@ function updateForecast() {
     };
 
     const markerPositions = {
-        'visual': '33%',
-        'far_infrared': '67%',
-        'radio': '98%'
+        'visual': { left: '40%', top: '10px' },
+        'far_infrared': { left: '75%', top: '80px' },
+        'radio': { left: '98%', top: '100px' }
     };
 
     // Set the date heading (e.g., "Visual Forecast: 26 March")
@@ -103,7 +103,8 @@ function updateForecast() {
 
     // Update UI Elements
     wavelengthRange.textContent = ranges[wavelength];
-    spectrumMarker.style.left = markerPositions[wavelength];
+    spectrumMarker.style.left = markerPositions[wavelength].left;
+    spectrumMarker.style.top = markerPositions[wavelength].top;
 
     const signData = allForecasts[currentSign];
     if (!signData) return;
