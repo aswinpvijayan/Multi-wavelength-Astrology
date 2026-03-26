@@ -13,6 +13,7 @@ const starsContainer = document.getElementById('stars-container');
 const zodiacDropdown = document.getElementById('zodiac-dropdown');
 const spectrumMarker = document.getElementById('spectrum-marker');
 const wavelengthRange = document.getElementById('wavelength-range');
+const sedCurve = document.getElementById('sed-curve');
 
 // Forecast Elements
 const forecastDateEl = document.getElementById('forecast-date');
@@ -90,10 +91,10 @@ function updateForecast() {
         'radio': 'λ: 1 mm - 100 m'
     };
 
-    const markerDistances = {
-        'visual': '15%',
-        'far_infrared': '55%',
-        'radio': '95%'
+    const markerPercents = {
+        'visual': 0.15,
+        'far_infrared': 0.55,
+        'radio': 0.95
     };
 
     // Set the date heading (e.g., "Visual Forecast: 26 March")
@@ -103,7 +104,14 @@ function updateForecast() {
 
     // Update UI Elements
     wavelengthRange.textContent = ranges[wavelength];
-    spectrumMarker.style.offsetDistance = markerDistances[wavelength];
+    
+    if (sedCurve && spectrumMarker) {
+        const totalLength = sedCurve.getTotalLength();
+        const point = sedCurve.getPointAtLength(totalLength * markerPercents[wavelength]);
+        // Set SVG attributes directly
+        spectrumMarker.setAttribute('cx', point.x);
+        spectrumMarker.setAttribute('cy', point.y);
+    }
 
     const signData = allForecasts[currentSign];
     if (!signData) return;
