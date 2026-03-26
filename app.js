@@ -85,13 +85,13 @@ function updateForecast() {
     const modeNames = {
         'visual': 'Visual',
         'far_infrared': 'Thermal',
-        'radio': 'Radio'
+        'radio': 'Warm'
     };
 
-    // Set the date heading (e.g., "25 March Visual Forecast")
+    // Set the date heading (e.g., "Visual Forecast: 25 March")
     const today = new Date();
     const dateOptions = { day: 'numeric', month: 'long' };
-    forecastDateEl.textContent = `${today.toLocaleDateString('en-GB', dateOptions)} ${modeNames[wavelength]} Forecast`;
+    forecastDateEl.textContent = `${modeNames[wavelength]} Forecast: ${today.toLocaleDateString('en-GB', dateOptions)}`;
 
     // Create a robust hash based on the exact date, the wavelength, AND the selected sign
     // This ensures variety across the different wavelengths and signs on the same day.
