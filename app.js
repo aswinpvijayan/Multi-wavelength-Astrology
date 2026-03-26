@@ -91,9 +91,9 @@ function updateForecast() {
     };
 
     const markerPositions = {
-        'visual': { left: '40%', top: '10px' },
-        'far_infrared': { left: '75%', top: '80px' },
-        'radio': { left: '98%', top: '100px' }
+        'visual': { left: '10%', top: '90px' },
+        'far_infrared': { left: '50%', top: '15px' },
+        'radio': { left: '90%', top: '90px' }
     };
 
     // Set the date heading (e.g., "Visual Forecast: 26 March")

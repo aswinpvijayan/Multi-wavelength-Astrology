@@ -342,13 +342,21 @@ h1 {
 }
 
 .radio-mode .card {
+    background: rgba(245, 158, 11, 0.05); /* Match Radio Glow */
     border-color: rgba(245, 158, 11, 0.3);
     box-shadow: 0 0 40px rgba(245, 158, 11, 0.1);
 }
 
 .fir-mode .card {
+    background: rgba(239, 68, 68, 0.05); /* Match FIR Glow */
     border-color: rgba(239, 68, 68, 0.3);
     box-shadow: 0 0 40px rgba(239, 68, 68, 0.1);
+}
+
+.visual-mode .card {
+    background: rgba(56, 189, 248, 0.05); /* Match Visual Glow */
+    border-color: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.1);
 }
 
 .wavelength-label {
